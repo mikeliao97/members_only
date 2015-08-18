@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :signed_in_user, only: [:new, :create]
   def index
-    
+    @posts = Post.all 
   end
 
   def new
@@ -19,5 +19,9 @@ class PostsController < ApplicationController
     unless signed_in?
       redirect_to signin_url
     end
+  end
+
+  def post_params
+    params.require(:post).permit(:body, :title, :user_id)
   end
 end

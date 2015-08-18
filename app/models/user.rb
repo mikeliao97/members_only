@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   #The website you visit has a remember_token_digest for you everytime you visit.
   #This remember_token that it has is 
   attr_accessor :remember_token
-  before_save{ self.email = email.downcase }
+  before_save{ self.email = email.downcase}
   before_create :remember 
   validates :name, presence: true, length: {maximum: 50}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
   def User.digest(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
+
 
 
   def remember

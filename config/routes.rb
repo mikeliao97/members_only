@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'posts/new'
 
-  get 'posts/create'
+  post 'posts/create'
 
   get 'sessions/new'
 
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'signup' => 'user#new'
   
   get 'homepage' => 'user#index'
-  root to: 'users#index'
+  root to: 'posts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
