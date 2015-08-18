@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'posts/index'
+
+  get 'posts/new'
+
+  get 'posts/create'
+
   get 'sessions/new'
 
   get 'login' => 'sessions#new'
