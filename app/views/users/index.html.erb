@@ -1,0 +1,10 @@
+<% if signed_in? %>
+  <h1> Welcome <%= current_user.name %> </h1> 
+  <br>
+  <br>
+  <%= link_to 'Logout', logout_path, :method => :delete %>
+<% else %>
+  <h1> Nobody's Logged in Right now </h1>
+  <%= link_to 'login', login_path %>
+<% end %>
+
